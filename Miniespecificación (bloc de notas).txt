@@ -1,0 +1,39 @@
+Problema 
+
+Elaborar una miespecificación que permita leer los datos de 2 
+aspirantes a ingresar a una Universidad: 
+pide ingresar: 
+nombre del aspirante, 
+promedio bachiller que equivale 30% de la nota total 
+la nota de la prueba de ingreso que equivale el 70% de la nota total 
+Imprimir si es aceptado si tiene una nota total entre 8-10 
+En caso de no ser así imprimir rechazado 
+
+-1. Aspirante ACEPTADO: Ana,con una nota total de 8.85 
+-2. Aspirante RECHAZADO: Juan,con una nota total de 5.60 
+
+
+1.  Inicio
+2.  nombre,x(30)[BS,{a-z},{A-Z}]
+3.  prom_bachiller,d[0-10]
+4.  nota_prueba,d[0-10]
+5.  nota_total,d[0-10]
+6.  contador,i[0-n]<--1  
+7.  Mientras contador <= 2 entonces
+8.    <<"Ingrese el nombre del aspirante."
+9.    >>nombre
+10.   <<"Ingrese el promedio bachiller."
+11.   >>prom_bachiller
+12.   <<"Ingrese la nota de la prueba de admisión."
+13.   >>nota_prueba
+14.   prom_bachiller <-- (prom_bachiller * 30) / 100
+15.   nota_prueba <-- (nota_prueba * 70) / 100
+16.   nota_total <-- prom_bachiller + nota_prueba
+17.   Si nota_total > 8 and nota_total < 10 entonces
+18.     <<"-"+contador". Aspirante ACEPTADO: "+nombre",con una nota total de: "+nota_total
+19.   De lo contrario
+20.     <<"-"+contador". Aspirante RECHAZADO: "+nombre",con una nota total de: "+nota_total
+21.   Fin Si
+22.   contador <-- contador + 1
+23. Fin Mientras
+24. Fin   
